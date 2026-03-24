@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 210 20% 98%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 221 83% 53%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 210 40% 96%;
+        --accent-foreground: 222 47% 11%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+        --ring: 221 83% 53%;
+        --chart-1: 221 83% 53%;
+        --chart-2: 160 84% 39%;
+        --chart-3: 38 92% 50%;
+        --chart-4: 0 84% 60%;
+        --chart-5: 262 83% 58%;
+        --radius: 0.75rem;
+        --success: 160 84% 39%;
+        --warning: 38 92% 50%;
+        --error: 0 84% 60%;
+    }
+
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .font-mono, code, .timer-display {
+        font-family: 'JetBrains Mono', monospace;
+    }
+}
+
+@layer components {
+    .card-shadow {
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    }
+
+    .card-shadow-lg {
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    .gradient-primary {
+        @apply bg-gradient-to-r from-blue-600 to-indigo-600;
+    }
+
+    .gradient-success {
+        @apply bg-gradient-to-r from-emerald-500 to-green-600;
+    }
+
+    .gradient-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .question-nav-btn {
+        @apply w-8 h-8 rounded-lg text-xs font-medium transition-all duration-200;
+    }
+
+    .question-nav-btn.unanswered {
+        @apply bg-gray-100 text-gray-600 hover:bg-gray-200;
+    }
+
+    .question-nav-btn.answered {
+        @apply bg-blue-600 text-white;
+    }
+
+    .question-nav-btn.marked {
+        @apply bg-amber-500 text-white;
+    }
+
+    .question-nav-btn.current {
+        @apply ring-2 ring-blue-600 ring-offset-2;
+    }
+
+    .choice-option {
+        @apply p-4 rounded-xl border-2 border-gray-200 bg-white cursor-pointer transition-all duration-200;
+    }
+
+    .choice-option:hover {
+        @apply border-blue-300 bg-blue-50/50;
+    }
+
+    .choice-option.selected {
+        @apply border-blue-600 bg-blue-50;
+    }
+
+    .choice-option.correct {
+        @apply border-emerald-500 bg-emerald-50;
+    }
+
+    .choice-option.incorrect {
+        @apply border-red-500 bg-red-50;
+    }
+
+    .stat-card {
+        @apply bg-white rounded-2xl p-6 card-shadow transition-all duration-200 hover:card-shadow-lg;
+    }
+
+    .nav-link {
+        @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200;
+    }
+
+    .nav-link:hover {
+        @apply bg-gray-100;
+    }
+
+    .nav-link.active {
+        @apply bg-blue-50 text-blue-600;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+}
