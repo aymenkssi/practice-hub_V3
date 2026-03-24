@@ -6,7 +6,8 @@ import { LangSwitcher } from '../components/LangSwitcher';
 import { Footer } from '../components/Footer';
 import { 
   BookOpen, User, Mail, Calendar, Crown, LogOut, LayoutDashboard, Clock,
-  CheckCircle, FileText, Play, XCircle, AlertTriangle, Loader2, Download, Trash2, Shield
+  CheckCircle, FileText, Play, XCircle, AlertTriangle, Loader2, Download, Trash2, Shield,
+  ShoppingCart, CreditCard
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
@@ -21,10 +22,12 @@ export default function ProfilePage() {
   const { user, isAdmin, logout } = useAuth();
   const { t } = useLang();
   const [purchasedData, setPurchasedData] = useState(null);
+  const [orders, setOrders] = useState([]);
   const [loadingExams, setLoadingExams] = useState(true);
+  const [loadingOrders, setLoadingOrders] = useState(true);
   const [exporting, setExporting] = useState(false);
 
-  useEffect(() => { fetchPurchasedExams(); }, []);
+  useEffect(() => { fetchPurchasedExams(); fetchOrders(); }, []);
 
   const fetchPurchasedExams = async () => {
     try {
@@ -32,6 +35,14 @@ export default function ProfilePage() {
       setPurchasedData(res.data);
     } catch (err) { console.error(err); }
     finally { setLoadingExams(false); }
+  };
+
+  const fetchOrders = async () => {
+    try {
+      const res = await axios.get(`${API}/user/orders`);
+      setOrders(res.data);
+    } catch (err) { console.error(err); }
+    finally { setLoadingOrders(false); }
   };
 
   const handleLogout = () => { logout(); navigate('/'); };
@@ -193,6 +204,53 @@ export default function ProfilePage() {
                 <FileText className="w-10 h-10 text-gray-300 mx-auto mb-3" />
                 <p className="text-gray-500 mb-4">{t('profile.noExams')}</p>
                 <Button variant="outline" onClick={() => navigate('/exams')} data-testid="browse-exams-btn">{t('profile.browseExams')}</Button>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Orders History */}
+        <Card className="card-shadow mb-6" data-testid="orders-history-section">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2"><ShoppingCart className="w-5 h-5 text-green-600" />{t('profile.ordersTitle') || 'Historique des commandes'}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {loadingOrders ? (
+              <div className="flex justify-center py-6"><Loader2 className="w-6 h-6 animate-spin text-blue-600" /></div>
+            ) : orders.length > 0 ? (
+              <div className="space-y-3">
+                {orders.map((order) => (
+                  <div key={order.id} className="flex items-center justify-between p-4 rounded-lg border border-gray-100" data-testid={`order-${order.id}`}>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <CreditCard className="w-4 h-4 text-gray-400" />
+                        <span className="font-medium text-gray-900">{order.description}</span>
+                        {order.status === 'completed' ? (
+                          <Badge variant="outline" className="text-emerald-600 border-emerald-200 bg-emerald-50"><CheckCircle className="w-3 h-3 mr-1" />{t('profile.orderCompleted') || 'Payé'}</Badge>
+                        ) : order.status === 'pending' ? (
+                          <Badge variant="outline" className="text-amber-600 border-amber-200 bg-amber-50"><Clock className="w-3 h-3 mr-1" />{t('profile.orderPending') || 'En attente'}</Badge>
+                        ) : (
+                          <Badge variant="outline" className="text-gray-500">{order.status}</Badge>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-4 text-sm text-gray-500">
+                        <span>{formatDate(order.created_at)}</span>
+                        {order.coupon_code && <span className="text-emerald-600">Coupon: {order.coupon_code}</span>}
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <span className="font-bold text-lg">{order.final_price}€</span>
+                      {order.discount_percent > 0 && (
+                        <div className="text-xs text-emerald-600">-{order.discount_percent}%</div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-6">
+                <ShoppingCart className="w-10 h-10 text-gray-300 mx-auto mb-3" />
+                <p className="text-gray-500">{t('profile.noOrders') || 'Aucune commande'}</p>
               </div>
             )}
           </CardContent>

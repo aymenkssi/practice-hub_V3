@@ -12,7 +12,8 @@ import {
   Settings,
   DollarSign,
   FolderOpen,
-  LogOut
+  LogOut,
+  ShoppingCart
 } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
@@ -50,6 +51,7 @@ export default function AdminDashboard() {
     { icon: FolderOpen, label: 'Catégories', path: '/admin/categories', color: 'bg-purple-100 text-purple-600' },
     { icon: FileText, label: 'Examens', path: '/admin/exams', color: 'bg-blue-100 text-blue-600' },
     { icon: Users, label: 'Utilisateurs', path: '/admin/users', color: 'bg-cyan-100 text-cyan-600' },
+    { icon: ShoppingCart, label: 'Commandes', path: '/admin/orders', color: 'bg-green-100 text-green-600' },
     { icon: Tag, label: 'Coupons', path: '/admin/coupons', color: 'bg-amber-100 text-amber-600' },
     { icon: Settings, label: 'Paramètres', path: '/admin/settings', color: 'bg-gray-100 text-gray-600' },
   ];

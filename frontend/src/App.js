@@ -27,6 +27,7 @@ import AdminQuestions from "./pages/admin/AdminQuestions";
 import AdminCoupons from "./pages/admin/AdminCoupons";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminUsers from "./pages/admin/AdminUsers";
+import AdminOrders from "./pages/admin/AdminOrders";
 
 import "./App.css";
 
@@ -118,6 +119,9 @@ function AppRoutes() {
       } />
       <Route path="/admin/users" element={
         <AdminRoute><AdminUsers /></AdminRoute>
+      } />
+      <Route path="/admin/orders" element={
+        <AdminRoute><AdminOrders /></AdminRoute>
       } />
     </Routes>
   );

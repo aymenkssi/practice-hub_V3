@@ -184,6 +184,11 @@ const translations = {
     deleteConfirm: { fr: 'Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.', en: 'Are you sure you want to delete your account? This action is irreversible.' },
     deleteSuccess: { fr: 'Compte supprimé avec succès', en: 'Account deleted successfully' },
     deleteError: { fr: 'Erreur lors de la suppression', en: 'Error during deletion' },
+    // Orders History
+    ordersTitle: { fr: 'Historique des commandes', en: 'Order History' },
+    noOrders: { fr: 'Aucune commande', en: 'No orders' },
+    orderCompleted: { fr: 'Payé', en: 'Paid' },
+    orderPending: { fr: 'En attente', en: 'Pending' },
   },
 
   // ==================== RESULTS ====================
