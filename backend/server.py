@@ -99,6 +99,7 @@ class ExamCreate(BaseModel):
     max_score: int = 1000
     domains: List[DomainWeight] = []
     price_single: float = 9.99  # Monthly access to this exam
+    price_lifetime: float = 49.99  # Lifetime access to this exam
     price_all_access: float = 29.99  # Access to all exams
     access_duration_days: int = 30
     is_active: bool = True
@@ -115,6 +116,7 @@ class ExamResponse(BaseModel):
     max_score: int
     domains: List[Dict[str, Any]]
     price_single: float
+    price_lifetime: float = 49.99
     price_all_access: float
     access_duration_days: int
     is_active: bool
@@ -398,6 +400,7 @@ async def create_exam(data: ExamCreate, admin: dict = Depends(get_admin_user)):
         "max_score": data.max_score,
         "domains": [d.model_dump() for d in data.domains],
         "price_single": data.price_single,
+        "price_lifetime": data.price_lifetime,
         "price_all_access": data.price_all_access,
         "access_duration_days": data.access_duration_days,
         "is_active": data.is_active,
@@ -459,6 +462,7 @@ async def update_exam(exam_id: str, data: ExamCreate, admin: dict = Depends(get_
         "max_score": data.max_score,
         "domains": [d.model_dump() for d in data.domains],
         "price_single": data.price_single,
+        "price_lifetime": data.price_lifetime,
         "price_all_access": data.price_all_access,
         "access_duration_days": data.access_duration_days,
         "is_active": data.is_active

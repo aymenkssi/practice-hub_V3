@@ -128,6 +128,7 @@ export default function AdminExams() {
       max_score: exam.max_score,
       domains: exam.domains || [],
       price_single: exam.price_single,
+      price_lifetime: exam.price_lifetime || 49.99,
       price_all_access: exam.price_all_access,
       access_duration_days: exam.access_duration_days,
       is_active: exam.is_active
