@@ -121,7 +121,7 @@ export default function AdminQuestions() {
               <div className="p-2 rounded-xl bg-blue-600">
                 <BookOpen className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-gray-900">MockExamCenter</span>
+              <span className="text-xl font-bold text-gray-900">examprep</span>
             </Link>
             
             <nav className="flex items-center gap-4">

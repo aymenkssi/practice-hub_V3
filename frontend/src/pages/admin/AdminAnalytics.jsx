@@ -36,7 +36,7 @@ export default function AdminAnalytics() {
     if (!data) return;
     const doc = new jsPDF();
     doc.setFontSize(18);
-    doc.text('MockExamCenter - Rapport Analytics', 14, 22);
+    doc.text('examprep - Rapport Analytics', 14, 22);
     doc.setFontSize(10);
     doc.text(`Rapport du ${new Date().toLocaleDateString('fr-FR')}`, 14, 30);
 
@@ -96,7 +96,7 @@ export default function AdminAnalytics() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <div className="p-2 rounded-xl bg-blue-600"><BookOpen className="w-6 h-6 text-white" /></div>
-            <span className="text-xl font-bold text-gray-900">MockExamCenter</span>
+            <span className="text-xl font-bold text-gray-900">examprep</span>
           </Link>
           <nav className="flex items-center gap-4">
             <Link to="/admin" className="nav-link"><LayoutDashboard className="w-4 h-4 inline mr-1" />Admin</Link>

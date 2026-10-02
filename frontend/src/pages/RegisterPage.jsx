@@ -49,7 +49,7 @@ export default function RegisterPage() {
         <div className="flex items-center justify-between mb-8">
           <Link to="/" className="flex items-center gap-3">
             <div className="p-2 rounded-xl bg-blue-600"><BookOpen className="w-6 h-6 text-white" /></div>
-            <span className="text-xl font-bold text-gray-900">MockExamCenter</span>
+            <span className="text-xl font-bold text-gray-900">examprep</span>
           </Link>
           <LangSwitcher />
         </div>

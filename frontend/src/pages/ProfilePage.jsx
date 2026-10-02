@@ -86,7 +86,7 @@ export default function ProfilePage() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <div className="p-2 rounded-xl bg-blue-600"><BookOpen className="w-6 h-6 text-white" /></div>
-            <span className="text-xl font-bold text-gray-900">MockExamCenter</span>
+            <span className="text-xl font-bold text-gray-900">examprep</span>
           </Link>
           <nav className="flex items-center gap-4">
             <Link to="/exams" className="nav-link">{t('nav.exams')}</Link>

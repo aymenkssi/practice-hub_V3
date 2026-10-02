@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
             <div className="p-2 rounded-xl bg-blue-600">
               <BookOpen className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">MockExamCenter</span>
+            <span className="text-xl font-bold text-gray-900">examprep</span>
           </Link>
           <LangSwitcher />
         </div>
@@ -45,7 +45,7 @@ function PrivacyFR() {
     <div className="prose prose-gray max-w-none space-y-6">
       <section>
         <h2 className="text-xl font-semibold">1. Responsable du traitement</h2>
-        <p>MockExamCenter est responsable du traitement des données personnelles collectées via cette plateforme.</p>
+        <p>examprep est responsable du traitement des données personnelles collectées via cette plateforme.</p>
         <p>Pour toute question relative à vos données, contactez-nous à : <strong>contact@mockexamcenter.com</strong></p>
       </section>
 
@@ -138,7 +138,7 @@ function PrivacyEN() {
     <div className="prose prose-gray max-w-none space-y-6">
       <section>
         <h2 className="text-xl font-semibold">1. Data Controller</h2>
-        <p>MockExamCenter is the data controller for personal data collected through this platform.</p>
+        <p>examprep is the data controller for personal data collected through this platform.</p>
         <p>For any questions about your data, contact us at: <strong>contact@mockexamcenter.com</strong></p>
       </section>
 

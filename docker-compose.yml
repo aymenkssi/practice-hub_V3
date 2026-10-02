@@ -1,0 +1,60 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: practicehub-mongodb
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: practicehub_admin
+      MONGO_INITDB_ROOT_PASSWORD: Aymenkabildridikssi!1807
+      MONGO_INITDB_DATABASE: practicehub_db
+    networks:
+      - internal
+
+  backend:
+    build: ./backend
+    container_name: practicehub-backend
+    restart: always
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - mongodb
+    networks:
+      - internal
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.practicehub-backend.rule=(Host(`examprep.fr`) || Host(`www.examprep.fr`)) && PathPrefix(`/api`)"
+      - "traefik.http.routers.practicehub-backend.priority=100"
+      - "traefik.http.routers.practicehub-backend.entrypoints=websecure"
+      - "traefik.http.routers.practicehub-backend.tls.certresolver=letsencrypt"
+      - "traefik.http.services.practicehub-backend.loadbalancer.server.port=8001"
+
+
+  frontend:
+    build: ./frontend
+    container_name: practicehub-frontend
+    restart: always
+    depends_on:
+      - backend
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.practicehub-frontend.rule=Host(`examprep.fr`) || Host(`www.examprep.fr`)"
+      - "traefik.http.routers.practicehub-frontend.priority=1"
+      - "traefik.http.routers.practicehub-frontend.entrypoints=websecure"
+      - "traefik.http.routers.practicehub-frontend.tls.certresolver=letsencrypt"
+      - "traefik.http.services.practicehub-frontend.loadbalancer.server.port=80"
+
+volumes:
+  mongo_data:
+
+networks:
+  web:
+    external: true
+  internal:
+    driver: bridge

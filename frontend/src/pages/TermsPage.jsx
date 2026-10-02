@@ -16,7 +16,7 @@ export default function TermsPage() {
             <div className="p-2 rounded-xl bg-blue-600">
               <BookOpen className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900">MockExamCenter</span>
+            <span className="text-xl font-bold text-gray-900">examprep</span>
           </Link>
           <LangSwitcher />
         </div>
@@ -45,7 +45,7 @@ function TermsFR() {
     <div className="prose prose-gray max-w-none space-y-6">
       <section>
         <h2 className="text-xl font-semibold">1. Objet</h2>
-        <p>Les présentes conditions générales d'utilisation régissent l'accès et l'utilisation de la plateforme MockExamCenter, un service de préparation aux examens de certification.</p>
+        <p>Les présentes conditions générales d'utilisation régissent l'accès et l'utilisation de la plateforme examprep, un service de préparation aux examens de certification.</p>
       </section>
 
       <section>
@@ -69,12 +69,12 @@ function TermsFR() {
 
       <section>
         <h2 className="text-xl font-semibold">5. Propriété intellectuelle</h2>
-        <p>Tous les contenus (questions, explications, interfaces) sont la propriété de MockExamCenter. Toute reproduction, distribution ou utilisation non autorisée est strictement interdite.</p>
+        <p>Tous les contenus (questions, explications, interfaces) sont la propriété de examprep. Toute reproduction, distribution ou utilisation non autorisée est strictement interdite.</p>
       </section>
 
       <section>
         <h2 className="text-xl font-semibold">6. Responsabilité</h2>
-        <p>MockExamCenter fournit des questions d'entraînement à titre éducatif. Nous ne garantissons pas la réussite aux examens de certification officiels. Le service est fourni "en l'état".</p>
+        <p>examprep fournit des questions d'entraînement à titre éducatif. Nous ne garantissons pas la réussite aux examens de certification officiels. Le service est fourni "en l'état".</p>
       </section>
 
       <section>
@@ -89,7 +89,7 @@ function TermsFR() {
 
       <section>
         <h2 className="text-xl font-semibold">9. Modification des conditions</h2>
-        <p>MockExamCenter se réserve le droit de modifier ces conditions. Les utilisateurs seront informés de toute modification significative.</p>
+        <p>examprep se réserve le droit de modifier ces conditions. Les utilisateurs seront informés de toute modification significative.</p>
       </section>
 
       <section>
@@ -105,7 +105,7 @@ function TermsEN() {
     <div className="prose prose-gray max-w-none space-y-6">
       <section>
         <h2 className="text-xl font-semibold">1. Purpose</h2>
-        <p>These terms of use govern access to and use of the MockExamCenter platform, a certification exam preparation service.</p>
+        <p>These terms of use govern access to and use of the examprep platform, a certification exam preparation service.</p>
       </section>
 
       <section>
@@ -129,12 +129,12 @@ function TermsEN() {
 
       <section>
         <h2 className="text-xl font-semibold">5. Intellectual Property</h2>
-        <p>All content (questions, explanations, interfaces) is the property of MockExamCenter. Any unauthorized reproduction, distribution, or use is strictly prohibited.</p>
+        <p>All content (questions, explanations, interfaces) is the property of examprep. Any unauthorized reproduction, distribution, or use is strictly prohibited.</p>
       </section>
 
       <section>
         <h2 className="text-xl font-semibold">6. Liability</h2>
-        <p>MockExamCenter provides practice questions for educational purposes. We do not guarantee success in official certification exams. The service is provided "as is".</p>
+        <p>examprep provides practice questions for educational purposes. We do not guarantee success in official certification exams. The service is provided "as is".</p>
       </section>
 
       <section>
@@ -149,7 +149,7 @@ function TermsEN() {
 
       <section>
         <h2 className="text-xl font-semibold">9. Changes to Terms</h2>
-        <p>MockExamCenter reserves the right to modify these terms. Users will be notified of any significant changes.</p>
+        <p>examprep reserves the right to modify these terms. Users will be notified of any significant changes.</p>
       </section>
 
       <section>

@@ -46,7 +46,7 @@ export default function ExamsPage() {
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3">
               <div className="p-2 rounded-xl bg-blue-600"><BookOpen className="w-6 h-6 text-white" /></div>
-              <span className="text-xl font-bold text-gray-900">MockExamCenter</span>
+              <span className="text-xl font-bold text-gray-900">examprep</span>
             </Link>
             <nav className="flex items-center gap-4">
               <Link to="/exams" className="nav-link active">{t('nav.exams')}</Link>

@@ -20,7 +20,7 @@ const translations = {
     subtitle: { fr: "Accédez à des milliers de questions d'entraînement pour réussir vos certifications IT, sécurité, cloud et plus encore.", en: 'Access thousands of practice questions to pass your IT, security, cloud certifications and more.' },
     ctaExplore: { fr: 'Explorer les examens', en: 'Explore Exams' },
     ctaRegister: { fr: 'Créer un compte gratuit', en: 'Create a Free Account' },
-    whyTitle: { fr: 'Pourquoi MockExamCenter ?', en: 'Why MockExamCenter?' },
+    whyTitle: { fr: 'Pourquoi examprep ?', en: 'Why examprep?' },
     feature1Title: { fr: 'Questions réalistes', en: 'Realistic Questions' },
     feature1Desc: { fr: 'Des questions calquées sur les vrais examens pour une préparation optimale.', en: 'Questions modeled on real exams for optimal preparation.' },
     feature2Title: { fr: 'Explications détaillées', en: 'Detailed Explanations' },
@@ -31,7 +31,7 @@ const translations = {
     ctaFreeDesc: { fr: 'Testez 10 questions gratuitement pour chaque examen. Sans engagement.', en: 'Try 10 questions for free on each exam. No commitment.' },
     ctaSeeExams: { fr: 'Voir les examens', en: 'See Exams' },
     ctaCreateAccount: { fr: 'Créer mon compte', en: 'Create My Account' },
-    copyright: { fr: '© 2026 MockExamCenter. Tous droits réservés.', en: '© 2026 MockExamCenter. All rights reserved.' },
+    copyright: { fr: '© 2026 examprep. Tous droits réservés.', en: '© 2026 examprep. All rights reserved.' },
   },
 
   // ==================== LOGIN ====================
